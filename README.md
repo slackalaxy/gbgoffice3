@@ -1,9 +1,9 @@
 # gbgoffice3: an unofficial GTK3 port of gbgoffice
 
-**Porting of [gbgoffice](http://gbgoffice.info/) from GTK2 (gtkmm 2.4) to GTK3 (gtkmm 3.0) was done *entirely* by Claude, by Anthropic.** Therefore, **no** credit goes to me for this AI slop. The program seems to build and run just fine on [CRUX](https://crux.nu/), however, be warned and use at your own risk.
+**Porting of [gbgoffice](http://gbgoffice.info/) from GTK2 (gtkmm-2) to GTK3 (gtkmm-3) was done *entirely* by Claude, by Anthropic.** Therefore, **no** credit goes to me for this AI slop. The program seems to build and run just fine on [CRUX](https://crux.nu/), however, be warned and use at your own risk.
 
 ## First level dependencies:
-[gtkmm-3.0](https://download.gnome.org/sources/gtkmm/3.24/)
+- [gtkmm-3](https://download.gnome.org/sources/gtkmm/3.24/)
 
 ## Dictionaries
 This ships the [bgoffice](https://bgoffice.sourceforge.net/) disctionaries bundled in, so no need to install them from [full-pack](https://sourceforge.net/projects/bgoffice/files/Full%20Pack%20of%20Dictionaries/1.0/) separately.
