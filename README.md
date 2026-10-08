@@ -9,6 +9,6 @@
 This ships the [bgoffice](https://bgoffice.sourceforge.net/) disctionaries bundled in, so no need to install them from [full-pack](https://sourceforge.net/projects/bgoffice/files/Full%20Pack%20of%20Dictionaries/1.0/) separately.
 
 ## Reasoning
-The last version of gbgoffice is 1.4, released in 2006. Debian provided 11 patches for gbgoffice in [Trixie](https://packages.debian.org/trixie/gbgoffice) and seems they aredropping the package from _testing_ (https://tracker.debian.org/news/1702050/gbgoffice-removed-from-testing/). 
+The last version of gbgoffice is 1.4, released in 2006. Debian provided 11 patches for gbgoffice in [Trixie](https://packages.debian.org/trixie/gbgoffice) and seems they are dropping the package from Forky ([testing](https://tracker.debian.org/news/1702050/gbgoffice-removed-from-testing/)). 
 
-As for me, I use CRUX and I'd like to remove the [gtkmm-2](https://download.gnome.org/sources/gtkmm/2.24/) dependency. Also, GTK2 will be dropped sooner or later.
+As for me, I use [CRUX](https://crux.nu/) and I'd like to remove the [gtkmm-2](https://download.gnome.org/sources/gtkmm/2.24/) dependency. Also, GTK2 will be dropped sooner or later.
