@@ -1,0 +1,40 @@
+
+AC_INIT(src/main.cpp)
+# we want to share shared folder so:
+AM_INIT_AUTOMAKE(bgoffice, 1.4)
+AM_CONFIG_HEADER(src/config.h)
+
+AC_ISC_POSIX
+AC_PROG_CC
+AM_PROG_CC_STDC
+AC_HEADER_STDC
+AC_PROG_CPP
+AC_PROG_CXX
+AC_PROG_CXXCPP
+dnl AM_PROG_LIBTOOL
+
+AC_LANG_CPLUSPLUS
+
+AC_CHECK_HEADERS(getopt.h,,AC_MSG_ERROR([*** getopt.h not found! ***]))
+
+PKG_CHECK_MODULES(GTKMM,[gtkmm-3.0 >= 3.0.0])
+AC_SUBST(GTKMM_CFLAGS)
+AC_SUBST(GTKMM_LIBS)
+
+AC_ARG_ENABLE(light-version,
+[  --enable-light-version	compile without history buttons, some menus etc.],[
+   echo "Light version will be compiled..."
+	AC_DEFINE([USE_LIGHT],[],[enable light version])],)
+
+AC_ARG_ENABLE(dictionary-dir,
+[  --enable-dictionary-dir	search for dictionaries only in /usr/local/share/bgoffice dir],[
+   echo "Dictionary lookup enabled..."
+	AC_DEFINE([USE_USER_LOCAL],[],[dictionary lookup])],)
+	
+AC_ARG_ENABLE(trayicon,
+[  --disable-trayicon		disable trayicon support],[
+   echo "Trayicon support disabled..."
+	AC_DEFINE([DISABLE_TRAY],[],[disable trayicon])],)
+
+
+AC_OUTPUT(Makefile src/Makefile pixmaps/Makefile data/Makefile)

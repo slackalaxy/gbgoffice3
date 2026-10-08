@@ -1,0 +1,7 @@
+type=dual
+data.bg=bg-en.dat
+data.en=en-bg.dat
+icon=bg_en_dual.xpm
+name=Dual Bulgarian English Dictionary
+name.bg=Двупосочен българско-английски речник
+version=1.0

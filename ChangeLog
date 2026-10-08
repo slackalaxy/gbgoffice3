@@ -1,0 +1,603 @@
+------------------------------------------------------------------------
+GTK3 port | Claude (AI assistant by Anthropic) | 2026-10-07
+
+Ported from GTK2/gtkmm-2.4 to GTK3/gtkmm-3.0, entirely by Claude:
+- configure/Makefile: require gtkmm-3.0, drop eggtrayicon
+- tray icon rewritten on Gtk::StatusIcon (main loop ends via Gtk::Main::quit)
+- menus rebuilt without Menu_Helpers; VBox/HBox -> Box; Table -> Grid
+- Adjustment::create, get_content_area, removed GTK2-only calls
+- fixes for modern g++ (History ctor, const char*, <cstring>)
+
+------------------------------------------------------------------------
+r134 | mironcho | 2006-09-04 12:29:09 +0300 (пн, 04 сеп 2006) | 1 line
+Changed paths:
+   M /trunk/ChangeLog
+
+
+------------------------------------------------------------------------
+r133 | mironcho | 2006-09-03 20:17:07 +0300 (нд, 03 сеп 2006) | 2 lines
+Changed paths:
+   M /trunk/src/workhelper.cpp
+
+added present() to WorkHelper show function
+
+------------------------------------------------------------------------
+r132 | mironcho | 2006-09-01 00:51:52 +0300 (пт, 01 сеп 2006) | 2 lines
+Changed paths:
+   M /trunk/configure.in
+   M /trunk/src/language_tools.h
+
+changed version information to 1.4 ;)
+
+------------------------------------------------------------------------
+r131 | mironcho | 2006-09-01 00:42:16 +0300 (пт, 01 сеп 2006) | 2 lines
+Changed paths:
+   M /trunk/src/dictgui.cpp
+
+focus entry widget after "Clear" button clicked - feature request #78
+
+------------------------------------------------------------------------
+r130 | mironcho | 2006-09-01 00:23:08 +0300 (пт, 01 сеп 2006) | 2 lines
+Changed paths:
+   M /trunk/src/workhelper.cpp
+
+more work on work helper proper positioning in KDE - now things look better :)
+
+------------------------------------------------------------------------
+r129 | mironcho | 2006-08-31 18:39:09 +0300 (чт, 31 авг 2006) | 3 lines
+Changed paths:
+   M /trunk/src/dictgui.cpp
+   M /trunk/src/dictgui.h
+   M /trunk/src/language_tools.h
+   M /trunk/src/prefsdialog.cpp
+   M /trunk/src/prefsdialog.h
+
+added option in preferences dialog - hide main window on startup when using trayicon.
+Feature request by Yovko Yovkov
+
+------------------------------------------------------------------------
+r128 | mironcho | 2006-08-31 17:04:50 +0300 (чт, 31 авг 2006) | 2 lines
+Changed paths:
+   M /trunk/src/dictgui.cpp
+   M /trunk/src/workhelper.cpp
+   M /trunk/src/workhelper.h
+
+improved work helper "positioning" code. Hope this works better in KDE
+
+------------------------------------------------------------------------
+r127 | mironcho | 2006-08-01 00:05:12 +0300 (вт, 01 авг 2006) | 3 lines
+Changed paths:
+   M /trunk/src/dictgui.cpp
+   M /trunk/src/dictgui.h
+
+added on_entry_activated handler to select all text in entry box on enter 
+key pressed (Petar Toushkov request)
+
+------------------------------------------------------------------------
+r126 | mironcho | 2005-03-25 23:32:21 +0200 (пт, 25 мар 2005) | 2 lines
+Changed paths:
+   M /trunk/src/defaults.h
+   M /trunk/src/dictgui.cpp
+   M /trunk/src/dictgui.h
+   M /trunk/src/language_tools.h
+
+added Edit -> View history, menu element
+
+------------------------------------------------------------------------
+r119 | mironcho | 2005-03-07 10:53:00 +0200 (пн, 07 мар 2005) | 1 line
+Changed paths:
+   M /trunk/src/dictgui.cpp
+
+
+------------------------------------------------------------------------
+r118 | mironcho | 2005-03-07 10:49:31 +0200 (пн, 07 мар 2005) | 2 lines
+Changed paths:
+   A /trunk/install-dictionaries.sh
+   M /trunk/src/dictgui.cpp
+   M /trunk/src/dictgui.h
+   M /trunk/src/language_tools.h
+
+Added special error message for Fedora and install-dictionaries.sh script for downloading and instaling dictionaries,
+
+------------------------------------------------------------------------
+r117 | mironcho | 2005-03-04 12:10:29 +0200 (пт, 04 мар 2005) | 2 lines
+Changed paths:
+   M /trunk/src/dictgui.cpp
+
+small fix for empty tooltip (workhelper) bug
+
+------------------------------------------------------------------------
+r116 | mironcho | 2005-03-01 01:48:09 +0200 (вт, 01 мар 2005) | 2 lines
+Changed paths:
+   M /trunk/src/dictgui.cpp
+
+small fix for clipboard connect/disconnect bug after preferences dialog
+
+------------------------------------------------------------------------
+r115 | mironcho | 2005-02-28 02:40:47 +0200 (пн, 28 фев 2005) | 2 lines
+Changed paths:
+   M /trunk/configure.in
+   M /trunk/src/language_tools.h
+
+updated to version 1.3
+
+------------------------------------------------------------------------
+r114 | mironcho | 2005-02-26 02:23:17 +0200 (сб, 26 фев 2005) | 2 lines
+Changed paths:
+   M /trunk/src/prefsdialog.cpp
+
+light version works again ;)
+
+------------------------------------------------------------------------
+r113 | mironcho | 2005-02-26 01:08:55 +0200 (сб, 26 фев 2005) | 2 lines
+Changed paths:
+   M /trunk/gbgoffice.1
+
+man page update
+
+------------------------------------------------------------------------
+r112 | mironcho | 2005-02-25 23:00:01 +0200 (пт, 25 фев 2005) | 2 lines
+Changed paths:
+   M /trunk/src/dictgui.cpp
+
+again clipboard - REALY catch only words...
+
+------------------------------------------------------------------------
+r111 | mironcho | 2005-02-25 10:46:40 +0200 (пт, 25 фев 2005) | 2 lines
+Changed paths:
+   M /trunk/src/dictgui.cpp
+
+now clipboard function will work only when exactly one word (only alphabets) is copied into clipboard.
+
+------------------------------------------------------------------------
+r110 | mironcho | 2005-02-22 02:09:56 +0200 (вт, 22 фев 2005) | 2 lines
+Changed paths:
+   M /trunk/pixmaps/gbgoffice-splash.png
+
+updated splash image (now with www.gbgoffice.info on it)
+
+------------------------------------------------------------------------
+r109 | mironcho | 2005-02-22 02:05:27 +0200 (вт, 22 фев 2005) | 2 lines
+Changed paths:
+   M /trunk/src/dictgui.cpp
+   M /trunk/src/language_tools.h
+   M /trunk/src/prefsdialog.cpp
+   M /trunk/src/prefsdialog.h
+   M /trunk/src/workhelper.cpp
+   M /trunk/src/workhelper.h
+
+added configuration for WorkHelper and some improvements for WorkHelper behaviour
+
+------------------------------------------------------------------------
+r108 | mironcho | 2005-02-21 02:04:30 +0200 (пн, 21 фев 2005) | 2 lines
+Changed paths:
+   M /trunk/src/dictgui.cpp
+   M /trunk/src/dictgui.h
+   M /trunk/src/workhelper.cpp
+   M /trunk/src/workhelper.h
+
+more fixes and imrovements for WorkHelper
+
+------------------------------------------------------------------------
+r107 | mironcho | 2005-02-20 13:39:27 +0200 (нд, 20 фев 2005) | 2 lines
+Changed paths:
+   M /trunk/src/workhelper.cpp
+   M /trunk/src/workhelper.h
+
+more improvements for "workhelper" widget
+
+------------------------------------------------------------------------
+r106 | mironcho | 2005-02-20 02:59:21 +0200 (нд, 20 фев 2005) | 2 lines
+Changed paths:
+   M /trunk/src/workhelper.cpp
+
+setting widget position
+
+------------------------------------------------------------------------
+r105 | mironcho | 2005-02-19 23:09:41 +0200 (сб, 19 фев 2005) | 2 lines
+Changed paths:
+   M /trunk/src/Makefile.am
+   M /trunk/src/dictgui.cpp
+   M /trunk/src/dictgui.h
+   A /trunk/src/workhelper.cpp
+   A /trunk/src/workhelper.h
+
+added new "tooltip" like, fancy feature
+
+------------------------------------------------------------------------
+r104 | mironcho | 2005-02-16 00:37:02 +0200 (ср, 16 фев 2005) | 2 lines
+Changed paths:
+   M /trunk/src/Makefile.am
+   D /trunk/src/encodechar.h
+
+removed unused encodechar.h
+
+------------------------------------------------------------------------
+r103 | mironcho | 2005-01-30 02:39:16 +0200 (нд, 30 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/src/main.cpp
+
+removed some non needed parts
+
+------------------------------------------------------------------------
+r102 | mironcho | 2005-01-29 22:57:02 +0200 (сб, 29 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/src/defaults.h
+   M /trunk/src/main.cpp
+
+added -v and --version options
+
+------------------------------------------------------------------------
+r101 | mironcho | 2005-01-29 21:29:05 +0200 (сб, 29 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/configure.in
+
+added check for getopt.h
+
+------------------------------------------------------------------------
+r100 | mironcho | 2005-01-29 21:13:16 +0200 (сб, 29 яну 2005) | 3 lines
+Changed paths:
+   M /trunk/src/defaults.h
+   M /trunk/src/main.cpp
+
+parsing command line options with getopt_long().
+basic help added.
+
+------------------------------------------------------------------------
+r99 | mironcho | 2005-01-29 18:02:27 +0200 (сб, 29 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/configure.in
+   M /trunk/src/defaults.h
+   M /trunk/src/dictgui.cpp
+   M /trunk/src/dictgui.h
+   M /trunk/src/main.cpp
+   M /trunk/src/properties.cpp
+   M /trunk/src/properties.h
+   M /trunk/src/translator.cpp
+   M /trunk/src/translator_manager.cpp
+   M /trunk/src/translator_manager.h
+
+return to non multidir version
+
+------------------------------------------------------------------------
+r92 | mironcho | 2005-01-27 02:38:48 +0200 (чт, 27 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/src/properties.cpp
+
+Uncomment commented DEBUGs. Sorry about that ;)
+
+------------------------------------------------------------------------
+r91 | danchev | 2005-01-27 00:32:10 +0200 (чт, 27 яну 2005) | 1 line
+Changed paths:
+   M /trunk/README
+
+more instructions
+------------------------------------------------------------------------
+r90 | mironcho | 2005-01-26 03:06:41 +0200 (ср, 26 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/src/translator_manager.cpp
+
+correcting findFiles behaviour
+
+------------------------------------------------------------------------
+r89 | mironcho | 2005-01-26 02:56:56 +0200 (ср, 26 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/src/main.cpp
+   M /trunk/src/properties.cpp
+   M /trunk/src/properties.h
+
+multiple fixes and improvements - it works again (almost properly)...
+
+------------------------------------------------------------------------
+r88 | mironcho | 2005-01-26 00:31:07 +0200 (ср, 26 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/configure.in
+
+commented CXXFLAGS
+
+------------------------------------------------------------------------
+r87 | dam | 2005-01-25 17:30:47 +0200 (вт, 25 яну 2005) | 1 line
+Changed paths:
+   M /trunk/TODO
+
+* Още неща за правене. Да не пропуснем нещо...
+------------------------------------------------------------------------
+r86 | dam | 2005-01-25 17:21:29 +0200 (вт, 25 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/configure.in
+
+* CXXFLAGS=-Wall
+
+------------------------------------------------------------------------
+r85 | dam | 2005-01-25 17:17:30 +0200 (вт, 25 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/src/main.cpp
+
+* Почистване на предупрежденията на компилатора
+
+------------------------------------------------------------------------
+r84 | dam | 2005-01-25 17:07:21 +0200 (вт, 25 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/src/main.cpp
+
+* Сливаме двата списъка с директории за речници - този от конфигурационния файл и този по подразбиране
+
+------------------------------------------------------------------------
+r83 | dam | 2005-01-25 17:06:26 +0200 (вт, 25 яну 2005) | 1 line
+Changed paths:
+   M /trunk/configure.in
+
+* Нова опция за ./configure: --with-debug
+------------------------------------------------------------------------
+r82 | dam | 2005-01-25 15:15:02 +0200 (вт, 25 яну 2005) | 1 line
+Changed paths:
+   M /trunk
+   M /trunk/pixmaps
+   M /trunk/src
+
+* Още генерирани файлове за игнориране
+------------------------------------------------------------------------
+r81 | dam | 2005-01-25 15:12:49 +0200 (вт, 25 яну 2005) | 2 lines
+Changed paths:
+   D /trunk/aclocal.m4
+
+* Изтриване на aclocal.m4 - генерира се от autogen.sh
+
+------------------------------------------------------------------------
+r80 | dam | 2005-01-25 15:11:32 +0200 (вт, 25 яну 2005) | 3 lines
+Changed paths:
+   M /trunk
+   M /trunk/configure.in
+   M /trunk/src/defaults.h
+   M /trunk/src/properties.cpp
+   M /trunk/src/properties.h
+   M /trunk/src/translator.cpp
+   M /trunk/src/translator_manager.cpp
+   M /trunk/src/translator_manager.h
+
+* Довършване на словането на свещ :-)
+* инструктиране на subversion да игнорира aclocal.m4, понеже е генериран
+
+------------------------------------------------------------------------
+r79 | dam | 2005-01-25 14:38:29 +0200 (вт, 25 яну 2005) | 1 line
+Changed paths:
+   M /trunk/README
+   M /trunk/configure.in
+   M /trunk/pixmaps
+   D /trunk/src/config.h.in
+   M /trunk/src/defaults.h
+   M /trunk/src/dictgui.cpp
+   M /trunk/src/dictgui.h
+   M /trunk/src/main.cpp
+   M /trunk/src/translator_manager.cpp
+   M /trunk/src/translator_manager.h
+
+* Merged revisions 55-78 from branches/multidir
+------------------------------------------------------------------------
+r64 | mironcho | 2005-01-23 19:58:34 +0200 (нд, 23 яну 2005) | 2 lines
+Changed paths:
+   A /trunk/Doxyfile
+
+added Doxyfile for generating documentation with doxygen
+
+------------------------------------------------------------------------
+r63 | mironcho | 2005-01-23 17:35:39 +0200 (нд, 23 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/pixmaps/Makefile.am
+   A /trunk/pixmaps/gbgoffice-splash.png (from /trunk/pixmaps/gbgoffice_splash.png:62)
+   D /trunk/pixmaps/gbgoffice_splash.png
+   M /trunk/src/splash.cpp
+
+changed splash image name
+
+------------------------------------------------------------------------
+r51 | mironcho | 2005-01-22 15:28:08 +0200 (сб, 22 яну 2005) | 1 line
+Changed paths:
+   M /trunk/ChangeLog
+   M /trunk/ChangeLog.html
+
+
+------------------------------------------------------------------------
+r50 | mironcho | 2005-01-22 15:26:57 +0200 (сб, 22 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/README
+
+updated install info for 1.2
+
+------------------------------------------------------------------------
+r49 | mironcho | 2005-01-22 15:12:40 +0200 (сб, 22 яну 2005) | 1 line
+Changed paths:
+   M /trunk/THANKS
+
+
+------------------------------------------------------------------------
+r48 | mironcho | 2005-01-21 02:01:42 +0200 (пт, 21 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/configure.in
+   M /trunk/src/language_tools.h
+
+updated version to 1.2
+
+------------------------------------------------------------------------
+r47 | mironcho | 2005-01-21 01:05:11 +0200 (пт, 21 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/configure.in
+   M /trunk/src/Makefile.am
+   M /trunk/src/defaults.h
+   M /trunk/src/dictgui.cpp
+   M /trunk/src/exam.cpp
+   M /trunk/src/exam.h
+   M /trunk/src/gbgoffice_tools.cpp
+   M /trunk/src/gbgoffice_tools.h
+   M /trunk/src/main.cpp
+   M /trunk/src/splash.cpp
+   M /trunk/src/splash.h
+   M /trunk/src/trayicon.cpp
+   M /trunk/src/trayicon.h
+
+added --enable-dictionary-dir which sets dictionary dir to /usr/local/share/bgoffice independent from PREFIX/share/bgoffice dir
+
+------------------------------------------------------------------------
+r46 | danchev | 2005-01-20 15:35:31 +0200 (чт, 20 яну 2005) | 1 line
+Changed paths:
+   M /trunk/TODO
+
+wishlist: milti path data dirs
+------------------------------------------------------------------------
+r45 | mironcho | 2005-01-19 00:03:03 +0200 (ср, 19 яну 2005) | 1 line
+Changed paths:
+   M /trunk/gbgoffice.1
+
+
+------------------------------------------------------------------------
+r44 | mironcho | 2005-01-18 23:55:25 +0200 (вт, 18 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/Makefile.am
+   A /trunk/gbgoffice.1
+
+initial man page 
+
+------------------------------------------------------------------------
+r43 | mironcho | 2005-01-17 01:23:34 +0200 (пн, 17 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/TODO
+
+all done, waiting for ideas..
+
+------------------------------------------------------------------------
+r42 | mironcho | 2005-01-17 01:20:51 +0200 (пн, 17 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/src/dictgui.cpp
+   M /trunk/src/exam.cpp
+   M /trunk/src/exam.h
+
+removed exam module from light version
+
+------------------------------------------------------------------------
+r41 | mironcho | 2005-01-17 00:58:07 +0200 (пн, 17 яну 2005) | 2 lines
+Changed paths:
+   M /trunk/src/config.h.in
+   M /trunk/src/dictgui.cpp
+   M /trunk/src/dictgui.h
+   M /trunk/src/language_tools.h
+   M /trunk/src/main.cpp
+   M /trunk/src/prefsdialog.cpp
+   M /trunk/src/prefsdialog.h
+
+preferences and trayicon behaviour improvements
+
+------------------------------------------------------------------------
+r32 | danchev | 2005-01-16 15:06:39 +0200 (нд, 16 яну 2005) | 1 line
+Changed paths:
+   A /trunk/src/Makefile.am
+   A /trunk/src/config.h.in
+   A /trunk/src/database.cpp
+   A /trunk/src/database.h
+   A /trunk/src/defaults.h
+   A /trunk/src/dictgui.cpp
+   A /trunk/src/dictgui.h
+   A /trunk/src/eggtrayicon.cpp
+   A /trunk/src/eggtrayicon.h
+   A /trunk/src/encodechar.h
+   A /trunk/src/exam.cpp
+   A /trunk/src/exam.h
+   A /trunk/src/gbgoffice_tools.cpp
+   A /trunk/src/gbgoffice_tools.h
+   A /trunk/src/history.cpp
+   A /trunk/src/history.h
+   A /trunk/src/language_tools.h
+   A /trunk/src/main.cpp
+   A /trunk/src/prefsdialog.cpp
+   A /trunk/src/prefsdialog.h
+   A /trunk/src/properties.cpp
+   A /trunk/src/properties.h
+   A /trunk/src/splash.cpp
+   A /trunk/src/splash.h
+   A /trunk/src/translator.cpp
+   A /trunk/src/translator.h
+   A /trunk/src/translator_manager.cpp
+   A /trunk/src/translator_manager.h
+   A /trunk/src/trayicon.cpp
+   A /trunk/src/trayicon.h
+
+moved to trunk
+------------------------------------------------------------------------
+r31 | danchev | 2005-01-16 15:04:16 +0200 (нд, 16 яну 2005) | 1 line
+Changed paths:
+   A /trunk/src
+
+moved to trunk
+------------------------------------------------------------------------
+r30 | danchev | 2005-01-16 15:03:49 +0200 (нд, 16 яну 2005) | 1 line
+Changed paths:
+   A /trunk/pixmaps/Makefile.am
+   A /trunk/pixmaps/gbgoffice-icon.png
+   A /trunk/pixmaps/gbgoffice-neutral.png
+   A /trunk/pixmaps/gbgoffice-sad.png
+   A /trunk/pixmaps/gbgoffice-smile.png
+   A /trunk/pixmaps/gbgoffice-tray.png
+   A /trunk/pixmaps/gbgoffice_splash.png
+
+moved to trunk
+------------------------------------------------------------------------
+r29 | danchev | 2005-01-16 15:02:19 +0200 (нд, 16 яну 2005) | 1 line
+Changed paths:
+   A /trunk/pixmaps
+
+
+------------------------------------------------------------------------
+r28 | danchev | 2005-01-16 15:01:09 +0200 (нд, 16 яну 2005) | 1 line
+Changed paths:
+   A /trunk/configure.in
+
+move to trunk
+------------------------------------------------------------------------
+r26 | danchev | 2005-01-16 14:59:59 +0200 (нд, 16 яну 2005) | 1 line
+Changed paths:
+   A /trunk/COPYING
+   A /trunk/COPYING.BULGARIAN
+   A /trunk/ChangeLog
+   A /trunk/ChangeLog.html
+   A /trunk/Makefile.am
+   A /trunk/aclocal.m4
+   A /trunk/autogen.sh
+   A /trunk/changelog.up
+
+move to trunk
+------------------------------------------------------------------------
+r25 | danchev | 2005-01-16 14:58:28 +0200 (нд, 16 яну 2005) | 1 line
+Changed paths:
+   A /trunk/README (from /README:22)
+
+
+------------------------------------------------------------------------
+r22 | danchev | 2005-01-16 14:56:23 +0200 (нд, 16 яну 2005) | 1 line
+Changed paths:
+   A /trunk/THANKS
+
+move to trunk
+------------------------------------------------------------------------
+r21 | danchev | 2005-01-16 14:56:07 +0200 (нд, 16 яну 2005) | 1 line
+Changed paths:
+   D /trunk/THANKS
+
+
+------------------------------------------------------------------------
+r20 | danchev | 2005-01-16 14:54:33 +0200 (нд, 16 яну 2005) | 1 line
+Changed paths:
+   A /trunk/THANKS (from /THANKS:17)
+
+move to trunk
+------------------------------------------------------------------------
+r19 | danchev | 2005-01-16 14:53:02 +0200 (нд, 16 яну 2005) | 1 line
+Changed paths:
+   A /trunk/TODO (from /TODO:17)
+
+move to trunk
+------------------------------------------------------------------------
+r18 | danchev | 2005-01-16 14:50:20 +0200 (нд, 16 яну 2005) | 1 line
+Changed paths:
+   A /trunk
+
+rearange trees
+------------------------------------------------------------------------

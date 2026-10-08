@@ -1,0 +1,6 @@
+type=bg
+data=thesaurus.dat
+icon=thesaurus.xpm
+name=Thesaurus
+name.bg=Синонимен речник
+version=2.0

@@ -1,0 +1,9 @@
+type=bg
+data=bg-en.dat
+name=From Bulgarian to English
+name.bg=От български на английски
+level_1=300
+level_2=200
+level_3=100
+level_4=50
+level_5=0

@@ -1,0 +1,6 @@
+type=en
+data=computer_terms.dat
+icon=computer_terms.xpm
+name=Dictionary of Computer Terms
+name.bg=Речник на компютърните термини
+version=1.0

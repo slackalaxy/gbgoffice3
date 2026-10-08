@@ -1,0 +1,6 @@
+type=bg
+data=dialect.dat
+icon=dialect.xpm
+name=Dialect Dictionary
+name.bg=Речник на Северозападния диалект
+version=1.0
